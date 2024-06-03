@@ -1,0 +1,25 @@
+# Dependency directory
+node_modules
+
+# Built
+dist/**/*
+.next
+
+#API keys and secrets
+.env
+.env.development
+.env.production
+.env.test
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Misc
+package-lock.json
+*-error.log
+next-env.d.ts
+
+#Log files
+logs
+*.log

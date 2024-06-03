@@ -1,0 +1,269 @@
+html {
+    -webkit-print-color-adjust: exact;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+* RC Pagination
+*/
+@layer components {
+    .rc-pagination {
+        @apply flex items-center flex-wrap;
+    }
+
+    .rc-pagination .rc-pagination-item,
+    .rc-pagination .rc-pagination-prev,
+    .rc-pagination .rc-pagination-next,
+    .rc-pagination.rc-pagination-simple .rc-pagination-prev,
+    .rc-pagination.rc-pagination-simple .rc-pagination-next {
+        @apply w-8 h-8 me-2 mt-2 flex items-center justify-center rounded border border-border-base bg-gray-50 hover:border-accent  hover:text-accent focus:border-accent focus:text-accent;
+    }
+
+    .rc-pagination .rc-pagination-prev.rc-pagination-disabled,
+    .rc-pagination .rc-pagination-next.rc-pagination-disabled {
+        @apply text-muted hover:text-muted hover:border-border-base focus:border-border-base;
+    }
+
+    .rc-pagination .rc-pagination-prev svg,
+    .rc-pagination .rc-pagination-next svg {
+        /*@apply w-4 h-4 rtl:transform rtl:rotate-180;*/
+    }
+
+    .rc-pagination .rc-pagination-item a {
+        @apply font-body text-sm text-heading;
+    }
+
+    .rc-pagination .rc-pagination-item:focus a,
+    .rc-pagination .rc-pagination-item:hover a {
+        @apply text-accent;
+    }
+
+    .rc-pagination .rc-pagination-jump-prev button,
+    .rc-pagination .rc-pagination-jump-next button {
+        @apply h-8 text-body-dark focus:outline-none focus:ring-1 focus:ring-accent-300;
+    }
+
+    .rc-pagination .rc-pagination-item.rc-pagination-item-active {
+        @apply border-accent bg-accent text-light;
+    }
+
+    .rc-pagination .rc-pagination-item.rc-pagination-item-active a {
+        @apply text-light hover:text-light focus:text-light;
+    }
+
+    .rc-pagination .rc-pagination-options .rc-pagination-options-quick-jumper,
+    .rc-pagination.rc-pagination-simple .rc-pagination-simple-pager {
+        @apply flex items-center font-body text-sm text-heading;
+    }
+
+    .rc-pagination .rc-pagination-options .rc-pagination-options-quick-jumper input,
+    .rc-pagination.rc-pagination-simple .rc-pagination-simple-pager input {
+        @apply h-8 border border-border-base bg-gray-50 rounded px-2 font-body text-sm text-heading hover:border-accent focus:border-accent focus:outline-none;
+    }
+
+    /* RC Table */
+    .rc-table {
+        @apply border-separate;
+        border-spacing: 0;
+    }
+
+    .rc-table .rc-table-body,
+    .rc-table .rc-table-header {
+        border: none;
+    }
+
+    .rc-table .rc-table-content {
+        @apply border-0;
+    }
+
+    .rc-table tr th,
+    .rc-table tr td {
+        @apply border-0 border-b border-border-200;
+    }
+
+    .rc-table thead.rc-table-thead th {
+        @apply py-3 px-3 text-base text-gray-800 font-semibold text-heading border-border-200 whitespace-nowrap first:pl-4 last:pe-4;
+        background-color: #f7f8f9;
+    }
+    .rc-table thead.rc-table-thead th.detail {
+        @apply py-3 px-3 text-base text-gray-800 font-semibold text-heading border-border-200 whitespace-nowrap first:pl-4 last:pe-4;
+        background-color: #f7f8f9;
+        color: #f7f8f9;
+    }
+
+    .rc-table tr.rc-table-row:hover {
+        background-color: inherit;
+    }
+    .rc-table tr.rc-table-row {
+        @apply bg-blue-50 !important;
+    }
+
+    .rc-table tr.rc-table-row.detail td {
+        @apply py-3 px-3 text-base text-gray-800 font-semibold first:ps-4 last:pe-4;
+        @apply bg-blue-50 !important;
+    }
+
+    .rc-table tr.rc-table-row .detail.new-color {
+        @apply bg-[#f0f0f0] !important;
+    }
+
+    .rc-table tr.rc-table-row td {
+        @apply py-3 px-3 text-sm font-normal first:ps-4 last:pe-4;
+    }
+
+    .rc-table tr.rc-table-row-level-1 td,
+    .rc-table tr.rc-table-row-level-1 td {
+        @apply bg-gray-100;
+    }
+
+    .rc-table tr.rc-table-row:last-child td {
+        @apply border-b-0;
+    }
+
+    .rc-table tr.rc-table-expanded-row > td {
+        @apply p-0 whitespace-normal border border-gray-50 bg-gray-200;
+    }
+
+    .rc-table tr.rc-table-expanded-row tr.rc-table-row {
+        cursor: default;
+    }
+
+    .rc-table .rc-table-row-expand-icon {
+        @apply inline-flex items-center justify-center;
+    }
+
+    .rc-table .rc-table-expanded-row-fixed::after {
+        border-width: 0;
+    }
+}
+
+/* React toastify */
+/*.Toastify__toast-theme--colored.Toastify__toast--success {*/
+/*  @apply !bg-accent;*/
+/*}*/
+
+/*.Toastify__toast-theme--colored..Toastify__toast--error {*/
+/*  @apply !bg-red-500;*/
+/*}*/
+
+/*.Toastify__toast-theme--colored.Toastify__toast--info {*/
+/*  @apply !bg-blue-500;*/
+/*}*/
+
+/*.Toastify__toast-theme--colored.Toastify__toast--warning {*/
+/*  @apply !bg-yellow-500;*/
+/*}*/
+
+/*
+Overlay Scrollbar - os-theme-thin-dark
+*/
+.os-theme-thin-dark > .os-scrollbar-horizontal {
+    right: 14px;
+    height: 14px;
+    padding: 0px 6px;
+}
+.os-theme-thin-dark > .os-scrollbar-vertical {
+    bottom: 14px;
+    width: 14px;
+    padding: 6px 0px;
+}
+.os-theme-thin-dark.os-host-rtl > .os-scrollbar-horizontal {
+    left: 14px;
+    right: 0;
+}
+.os-theme-thin-dark > .os-scrollbar-corner {
+    height: 14px;
+    width: 14px;
+    background-color: transparent;
+}
+.os-theme-thin-dark > .os-scrollbar > .os-scrollbar-track {
+    background: transparent;
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.15);
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:before {
+    left: 0;
+    right: 0;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+}
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track:before,
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:before {
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    left: 50%;
+    margin-left: -1px;
+}
+.os-theme-thin-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle.active:before {
+    height: 4px;
+    margin-top: -2px;
+}
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle.active:before {
+    width: 4px;
+    margin-left: -2px;
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:hover:before {
+    background: rgba(0, 0, 0, 0.7);
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle.active:before,
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle.active:before {
+    background: #000;
+}
+.os-theme-thin-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+    height: 100%;
+    min-width: 30px;
+}
+.os-theme-thin-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+    width: 100%;
+    min-height: 30px;
+}
+.os-theme-thin-dark.os-host-transition > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle:before {
+    transition: height 0.3s, margin-top 0.3s, background 0.2s;
+}
+.os-theme-thin-dark.os-host-transition > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle:before {
+    transition: width 0.3s, margin-left 0.3s, background 0.2s;
+}
+.fc-daygrid-day-bottom {
+    color: blue;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+.fc-h-event {
+    border: none !important;
+    background-color: transparent !important;
+}
+.fc--button {
+    background-color: transparent !important;
+    border: none !important;
+}
+.fc--button:focus {
+    box-shadow: none !important;
+}
+.fc-theme-standard td {
+    height: 170px;
+}
+.fc .fc-more-popover .fc-popover-body {
+    max-height: 400px;
+    overflow: scroll;
+}
